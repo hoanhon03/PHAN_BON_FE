@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.toggle-checkbox:checked {
+    right: 0;
+    border-color: #68D391;
+  }
+  .toggle-checkbox:checked + .toggle-label {
+    background-color: #68D391;
+  }
+  .toggle-checkbox {
+    right: 0;
+    transition: all 0.3s;
+  }
+  .toggle-label {
+    transition: background-color 0.3s;
+  }
+
+/* Pre-loader css start */
+.loader-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 1035;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.loader-bg .loader-track {
+  position: relative;
+  height: 5px;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.loader-bg .loader-track .loader-fill:after, .loader-bg .loader-track .loader-fill:before {
+  content: '';
+  background: #287200;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+}
+
+.loader-bg .loader-track .loader-fill:before {
+  -webkit-animation: mbar 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  animation: mbar 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.loader-bg .loader-track .loader-fill:after {
+  -webkit-animation: m_s 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  animation: m_s 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  -webkit-animation-delay: 1.15s;
+  animation-delay: 1.15s;
+}
+@-webkit-keyframes mbar {
+  0% {
+      left: -35%;
+      right: 100%;
+  }
+
+  60% {
+      left: 100%;
+      right: -90%;
+  }
+
+  100% {
+      left: 100%;
+      right: -35%;
+  }
+}
+
+@keyframes mbar {
+  0% {
+      left: -35%;
+      right: 100%;
+  }
+
+  60% {
+      left: 100%;
+      right: -90%;
+  }
+
+  100% {
+      left: 100%;
+      right: -35%;
+  }
+}
+
+@-webkit-keyframes m_s {
+  0% {
+      left: -200%;
+      right: 100%;
+  }
+
+  60% {
+      left: 107%;
+      right: -8%;
+  }
+
+  100% {
+      left: 107%;
+      right: -8%;
+  }
+}
+
+@keyframes m_s {
+  0% {
+      left: -200%;
+      right: 100%;
+  }
+
+  60% {
+      left: 107%;
+      right: -8%;
+  }
+
+  100% {
+      left: 107%;
+      right: -8%;
+  }
+}
+.loader-hidden {
+  display: none;
+}
+/* ================== đường viền ========================= */
+.gradient-border-box {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.gradient-border-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  padding: 2px;
+  background: linear-gradient(to bottom right, #4CAF50, #8BC34A);
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+@media (max-width: 640px) {
+  .react-datepicker {
+    width: 100%;
+    max-width: 300px;
+  }
+  .react-datepicker__month-container {
+    width: 100%;
+  }
+}

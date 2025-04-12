@@ -1,0 +1,16 @@
+.navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    /* width: 100%; */
+    height: calc(100vh - 100%);
+    transition: left 0.5s ease-in-out;
+    z-index: 20;
+    overflow-y: auto;
+  }
+  .menu-transition {
+    transition: transform 2000ms ease-in-out;
+  }
+  .navbar-menu.open {
+    left: 0;
+  }
